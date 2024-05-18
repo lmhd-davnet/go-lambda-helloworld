@@ -32,3 +32,33 @@ https://hzlnkxheya6khecdtevqsbj37y0uafwj.lambda-url.eu-west-2.on.aws/
 ```
 goreleaser build --clean --snapshot
 ```
+
+Works. But to build an actual release and publish on GitHub, I need to...
+
+
+```
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+Only then can I run:
+
+
+```
+goreleaser release --clean
+```
+
+Which creates...
+https://github.com/lmhd-davnet/go-lambda-helloworld/releases/tag/v0.1.0
+
+
+
+
+Turns out, you genuinely need the binary to be called "bootstrap", so v0.1.1 theoretically fixes that...
+
+
+
+
+## Future Tasks
+
+* [ ] GitHub Action to run GoReleaser for any new tag - https://github.com/goreleaser/goreleaser-action

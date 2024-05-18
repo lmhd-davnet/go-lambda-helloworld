@@ -22,7 +22,7 @@ builds:
       - arm64
     goos:
       - linux
-    binary: hello.handler
+    binary: bootstrap
 
 archives:
   - format: zip
